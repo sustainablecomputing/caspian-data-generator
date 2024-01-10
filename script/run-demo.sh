@@ -2,5 +2,5 @@
 # Change to the directory containing the Python script
 cd ~/caspian-demo
 
-/usr/local/bin/python3.8 /Users/tbahreini/caspian-demo/load-generator.py 12 80 & #highdemand 12 80, low demand 12 50
-/usr/local/bin/python3.8 /Users/tbahreini/caspian-demo/usage-monitoring.py
+/usr/bin/python3 ~/caspian-demo/load-generator.py 8 80 #& #highdemand 8 80, low demand 8 120
+#/usr/bin/python3 ~/caspian-demo/usage-monitoring.py
