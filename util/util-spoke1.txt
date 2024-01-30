@@ -1,0 +1,470 @@
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     14        14
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     16        16
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     16        16
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     12        12
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     13        13
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     16        16
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     12        12
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     11        11
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     13        13
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     13        13
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     13        13
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     15        15
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     16        16
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     9         9
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     10        10
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+  hugepages-32Mi     0 (0%)    0 (0%)
+  hugepages-64Ki     0 (0%)    0 (0%)
+  nvidia.com/gpu     0         0
