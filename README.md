@@ -27,19 +27,19 @@ git clone git@github.com:tardieu/mcad.git -b multicluster
 ```
 
 ## Steps to deploy Caspian on Mac
-- (1) Go to the script directory of repo
+(1) Go to the script directory of repo,
 ```
 cd caspian-demo/script
 ```
 
-- (2) Create one hub cluster and multiple spoke clusters by executing the following script, 
+(2) Create one hub cluster and multiple spoke clusters by executing the following script, 
 
 ```
 ./create-clusters.sh m n q
 ```
-This script creates one hub cluster and m spoke clusters. Here, n is the number of worker nodes per cluster and q is the number of GPUs per node. For example by calling ./create-clusters.sh 1 1 8, the script will create one hub cluster and one spoke cluster. There are two nodes on the spoke; one server node, one worker node; each with 8 GPUs.
+This script creates one hub cluster and m spoke clusters. Here, n is the number of worker nodes per cluster and q is the number of GPUs per node. For example by calling **./create-clusters.sh 1 1 8**, the script will create one hub cluster and one spoke cluster. There are two nodes on the spoke; one server node, one worker node; each with 8 GPUs.
 
-- (3) Run MCAD Dispatcher in hub cluster and MCAD Runner in each  spoke clusters (m is the number of spoke clusters), 
+- (3) Run MCAD Dispatcher in hub cluster and MCAD Runner in each spoke clusters (m is the number of spoke clusters), 
 
 ```
 ./run-mcad.sh m 
