@@ -3,12 +3,12 @@
 Caspian can be depolyed in Kubernetes cluster. You can use kind or k3d to get a local cluster for testing and running Caspian.
 The instructions  below guide you to drop Caspian and its requirements  on your local machine  and run it for development and testing purposes. 
 ### Pre-requisites
--  Version 1.19 or higher of ![Go](https://go.dev/dl/).
+- Version 1.19 or higher of [Go](https://go.dev/dl/).
 
-- ![kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
-- ![Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+- [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-- Install ![clp](https://github.com/lanl/clp). The easiest way to get clp is through ![Homebrew](https://brew.sh/)
+- Install [clp](https://github.com/lanl/clp). The easiest way to get clp is through [Homebrew](https://brew.sh/)
 ```
 brew install clp
 ``` 
