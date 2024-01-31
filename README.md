@@ -54,9 +54,13 @@ Here, *m* is the number of spoke clusters. For more details on how to setup the 
 ```
 Here, *T* is the number of time slots in whcih workloads arrive to the system and *N* is the number of workloads to be sumbitted over *T* time slots.
 
-(5) Run Caspian
+(5) Run Caspian 
 
 ```
 ./run-caspian.sh 
 ```
+The default optimizer in Caspian is a multi-objective optimizer that considers carbon footprint, lateness, and completion time of workloads into consideration when it makes decision. However Caspian provides other options, For example, by passing *qos* parameters to the script, we ask optimizer to only consider lateness and completion time of workloads and do not decides based on the acvailability of low-carbon energy,
 
+```
+./run-caspian.sh qos
+```
