@@ -40,12 +40,12 @@ cd caspian-demo/script
 ```
 This script creates one hub cluster and *m* spoke clusters. Here, *n* is the number of worker nodes per cluster and *q* is the number of GPUs per node. For example by calling *./create-clusters.sh 1 1 8*, the script will create one hub cluster and one spoke cluster. There are two nodes on the spoke; one server node, one worker node; each with 8 GPUs.
 
-(3) Run MCAD Dispatcher in hub cluster and MCAD Runner in each spoke clusters (m is the number of spoke clusters) by running *./run-mcad* script, 
+(3) Run MCAD Dispatcher in hub cluster and MCAD Runner in each spoke clusters by running *./run-mcad* script, 
 
 ```
 ./run-mcad.sh m 
 ```
-For more details on how to setup the charachteristics of cluters (such as their geo-location and power consumption profile) please look at the comments in the script.
+Here, *m* is the number of spoke clusters. For more details on how to setup the charachteristics of cluters (such as their geo-location and power consumption profile), please look at the comments in the script.
 
 (4) Run *load-generator.sh* to create workloads (AppWrappers) in a timely manner (poisson distribution) and submit them in the hub cluster,
 
