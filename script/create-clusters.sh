@@ -15,6 +15,7 @@
 #  For each spoke cluster i in {1,2,...,numClusters}
 #  (2) Create the cluster (clusteri) with numNodes nodes
 #  (3) Add numGPUs GPUs in each node
+#  (4) install MCAD in each cluster
 
 #
 ############################################################
@@ -48,10 +49,11 @@ then
 fi
 
 #
-echo ""
+
 echo "==> Creating and setting $numClusters k3d cluster(s)"
 set -x
-k3d cluster create hub
+k3d cluster create $HUB
+
 for i in $(seq ${numClusters})
 do
 	csi="${CLUSTER}${i}"
@@ -61,6 +63,7 @@ do
 	k3d cluster create ${csi} --agents $numNodes
 	# now context is ${csi}
 	. extend_resources.sh $numGPUs
+	
 	
 done
 
