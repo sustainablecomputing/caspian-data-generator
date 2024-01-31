@@ -1,4 +1,5 @@
 #!/bin/bash
-# Change to the directory containing the Python script
-cd ~/caspian
-go run ./cmd/main.go --kube-context=k3d-hub --optimizer=sustainable //optimizer good be sustaible or QoS
+. demo-setenv.sh
+cd $CASPIAN_DIR
+context=${CONTEXT_PREFIX}${HUB}
+go run ./cmd/main.go --kube-context=$context --optimizer=sustainable #optimizer could work in two-modes: sustainable or QoS
