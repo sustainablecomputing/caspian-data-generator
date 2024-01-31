@@ -1,3 +1,6 @@
+<style type="text/css">
+ a {text-decoration:none;}
+</style>
 # caspian-demo
 ## Steps to deploy Caspian on Mac
 Caspian can be depolyed in Kubernetes cluster. You can use kind or k3d to get  local clusters for testing and running Caspian. For managing containers you can use either Docker Desktop or Rancher Desktop. The instructions below guide you to drop Caspian and its requirements on your local machine and run it for development and testing purposes under k3d cluaters and Rancher Desktop.
