@@ -9,7 +9,7 @@ Caspian can be depolyed in Kubernetes cluster. You can use kind or k3d to get  l
 - [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
 - [k3d](https://k3d.io/v5.6.0/#install-script)
 
-- Install [clp](https://github.com/lanl/clp). The easiest way to get clp is through [Homebrew](https://brew.sh/)
+- [clp](https://github.com/lanl/clp). The easiest way to get clp is through [Homebrew](https://brew.sh/)
 ```
 brew install clp
 ``` 
