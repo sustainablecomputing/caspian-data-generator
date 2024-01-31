@@ -17,10 +17,10 @@ echo "==> setting up environment"
 
 export SCRIPT_DIR=.
 export BASE_DIR=..
-export CONF_DIR=$BASE_DIR/config
 export YAML_DIR=$BASE_DIR/yaml
 export TEMP_DIR=$BASE_DIR/temp
-
+export MCAD_DIR=$HOME/mcad
+export CASPIAN_DIR=$HOME/caspian
 export CLUSTERS_CONFIG=$HOME/.kube/config
 
 ############################################################
@@ -29,11 +29,5 @@ export CLUSTERS_CONFIG=$HOME/.kube/config
 
 
 export CLUSTER=spoke
-export NAME_KEY=name
-
-break_continue_message=""
-
-############################################################
-# Routines
-############################################################
-
+export HUB=hub
+export CONTEXT_PREFIX=k3d-

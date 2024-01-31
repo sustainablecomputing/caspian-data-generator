@@ -27,7 +27,7 @@ then
 fi
 
 echo "==> Deleting ${numClusters} cluster(s)"
-
+k3d cluster delete $HUB
 set -x
 
 
@@ -41,7 +41,6 @@ rm -R ${TEMP_DIR}/
 
 
 set +x
-break_continue_message="Stop mcad. Is MCAD terminated?"; continue_prompt
 
 echo ""
 echo "==> CLUSTERS DELETED!"
