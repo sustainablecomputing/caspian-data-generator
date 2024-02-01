@@ -6,16 +6,15 @@
 #
 # Usage: <shellName> [<numClusters>] [<numNodes>] [<numGPUs>]
 # Arguments
-# $1  number of spoke clusters
+# $1  Number of spoke clusters
 # $2  Number of nodes in each spoke
-# $3	Number of GPU cores in each node
+# $3  Number of GPU cores in each node
 
 # Steps:
 # (1) Create a hub cluster 
 #  For each spoke cluster i in {1,2,...,numClusters}
-#  (2) Create the cluster (clusteri) with numNodes nodes
+#  (2) Create the cluster (spokei) with numNodes nodes
 #  (3) Add numGPUs GPUs in each node
-#  (4) install MCAD in each cluster
 
 #
 ############################################################
@@ -35,14 +34,14 @@ then
 	numClusters=$1
 fi
 
-numNodes=2
+numNodes=1
 if [[ $2 && $2 -gt 0 ]]
 then
 	numNodes=$2
 fi
 
 
-numGPUs=16
+numGPUs=8
 if [[ $3 && $3 -gt 0 ]]
 then
 	numGPUs=$3
