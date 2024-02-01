@@ -11,7 +11,7 @@
 ############################################################
 if [ $# -lt 2 ]
 then
-	echo "usage: <cmd> <numslots> <numjobs>  "
+	echo "usage: <cmd> <numslots> <numjobs> "
 	exit
 fi
 
@@ -30,6 +30,9 @@ then
 	numjobs=$2
 fi
 
+
+
+hub_context=${CONTEXT_PREFIX}${HUB}
 cd ~/caspian-demo
 
-/usr/bin/python3 ~/caspian-demo/load-generator.py $numslots $numjobs 
+/usr/bin/python3 ~/caspian-demo/load-generator.py $numslots $numjobs $hub_context
