@@ -1,5 +1,5 @@
 # Caspian-demo
-This repo will enable you to run a dome on using [Caspian](https://github.com/sustainablecomputing/caspian) and [MCAD](https://github.com/project-codeflare/mcad/tree/033081131d23ba30ccf86d7cd7cc63006a51c92d) to schedule and dispatch workloads in a multi-cluster environment to minimize the carbon footprint of execution of workloads. 
+This repo will show you how to use [Caspian](https://github.com/sustainablecomputing/caspian) and [MCAD](https://github.com/project-codeflare/mcad/tree/033081131d23ba30ccf86d7cd7cc63006a51c92d) to schedule and dispatch workloads in a multi-cluster environment to minimize the carbon footprint of execution of workloads. 
 ## Getting Started 
 Caspian can be depolyed in Kubernetes clusters. You can use kind or k3d to get  local clusters for running Caspian. To manage containers, you can use either Docker Desktop or Rancher Desktop. The instructions below guide you to drop Caspian and its requirements on your local machine and run it for development and testing purposes using k3d clusters and Rancher Desktop.
 
@@ -65,4 +65,16 @@ The default optimizer in Caspian is a multi-objective optimizer that considers c
 
 ```
 ./run-caspian.sh qos
+```
+
+To visualize the output of Caspian in action, run the follwoing script
+```
+./run-visualization.sh m
+```
+where *m* is the number of clusters.
+
+To clean up the demo, you can run the following commands.
+
+```
+./cleanup.sh m
 ```
