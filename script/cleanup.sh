@@ -31,6 +31,7 @@ k3d cluster delete $HUB
 set -x
 
 
+k3d cluster delete $HUB
 for i in $(seq ${numClusters})
 do
 	csi="${CLUSTER}${i}"
