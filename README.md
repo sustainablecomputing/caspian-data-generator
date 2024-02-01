@@ -1,3 +1,5 @@
+# Caspian-demo
+This repo will enable you to run a dome on using [Caspian](https://github.com/sustainablecomputing/caspian) and [MCAD](https://github.com/project-codeflare/mcad/tree/033081131d23ba30ccf86d7cd7cc63006a51c92d) to schedule and dispatch workloads in a multi-cluster environment to minimize the carbon footprint of execution of workloads. 
 ## Getting Started 
 Caspian can be depolyed in Kubernetes clusters. You can use kind or k3d to get  local clusters for running Caspian. To manage containers, you can use either Docker Desktop or Rancher Desktop. The instructions below guide you to drop Caspian and its requirements on your local machine and run it for development and testing purposes using k3d clusters and Rancher Desktop.
 
@@ -59,7 +61,7 @@ Here, *T* is the number of time slots in whcih workloads arrive to the system an
 ```
 ./run-caspian.sh 
 ```
-The default optimizer in Caspian is a multi-objective optimizer that considers carbon footprint, lateness, and completion time of workloads into consideration when it makes decision. However Caspian provides other options, For example, by passing *qos* parameters to the script, we ask optimizer to only consider lateness and completion time of workloads and do not decides based on the acvailability of low-carbon energy,
+The default optimizer in Caspian is a multi-objective optimizer that considers carbon footprint, lateness, and completion time of workloads into consideration when it makes decision. However Caspian provides other options, For example, by passing *qos* parameters to the script, we ask optimizer to only consider lateness and completion time of workloads and do not decide based on the acvailability of low-carbon energy,
 
 ```
 ./run-caspian.sh qos
