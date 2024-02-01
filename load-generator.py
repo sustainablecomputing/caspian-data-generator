@@ -14,6 +14,7 @@ kube_path='~/.kube/config'
 
 n=1             # number of jobs
 TT = 1          # number of time slots to generate load
+hub_context="k3d-hub" #default hub context
 period_length=60
 
 #------------------------------------------------------------------------------------------
@@ -34,11 +35,13 @@ def create_job(job_id,run_time,duration,deadline,cpu,gpu):
 #create jobs for a time horizon T
 def create_all_jobs():
     numpy.random.seed(1)
-    subprocess.run('kubectl config use-context k3d-hub ',shell=True)
+    
                
-    if len(sys.argv)>2:
+    if len(sys.argv)>3:
         T=int(sys.argv[1])
         n=int(sys.argv[2])
+        hub_context=str(sys.argv[2])
+        subprocess.run('kubectl config use-context '+hub_context,shell=True)
         path=os.path.expanduser('~')+"/caspian-demo/script"
         os.chdir(path)
         rate = n / T
