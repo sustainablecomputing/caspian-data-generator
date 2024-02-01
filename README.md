@@ -4,15 +4,28 @@ This repo will show you how to use [Caspian](https://github.com/sustainablecompu
 Caspian can be depolyed in Kubernetes clusters. You can use kind or k3d to get  local clusters for running Caspian. To manage containers, you can use either Docker Desktop or Rancher Desktop. The instructions below guide you to drop Caspian and its requirements on your local machine and run it for development and testing purposes using k3d clusters and Rancher Desktop.
 
 ### Pre-requisites
-- Version 1.19 or higher of [Go](https://go.dev/dl/)
+- [Go](https://go.dev/dl/) 
+```
+brew install go
+``` 
 
-- [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+- [kubectl CLI](https://kubernetes.io/docs/reference/kubectl/)
+```
+brew install kubernetes-cli
+``` 
 - [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
-- [k3d](https://k3d.io/v5.6.0/#install-script)
-
-- [clp](https://github.com/lanl/clp)<br>
-The easiest way to get clp is through [Homebrew](https://brew.sh/),
+```
+brew install git
+``` 
+- [Rancher Desktop](https://rancherdesktop.io/) 
+```
+brew install --cask rancher
+``` 
+- [k3d](https://k3d.io/)
+```
+brew install k3d
+``` 
+- [clp](https://github.com/lanl/clp), a Go-based optimization package for soliving linear programming problems,
 ```
 brew install clp
 ``` 
