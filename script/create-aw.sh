@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# create a green job deployment yaml file in a temp directory from a template file
+# create an appwrapper  yaml file in a temp directory from a template file
 #  - substitute original strings ending with "-xxx" in the template file
 #    with values given in the arguments
 #  - name of generated yaml file is the given job name
@@ -11,6 +11,7 @@
 # $3	total run time in seconds
 # $4	deadline in real time
 # $5	number of cpu cores
+# $6	number of gpu cores
 
 if [ $# -lt 6 ]
 then
@@ -25,8 +26,9 @@ duration=$3
 deadline=$4
 cpu_core=$5
 gpu_core=$6
-YAML_DIR=~/caspian-demo/yaml/
-TEMP_DIR=~/caspian-demo/temp/
+
+. demo-setenv.sh
+
 echo "==> creating AppWrapper file ${job_name}.yaml"
 
 
