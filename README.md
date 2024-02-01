@@ -1,5 +1,5 @@
 # Caspian-demo
-This repo will show you how to use [Caspian](https://github.com/sustainablecomputing/caspian) and [MCAD](https://github.com/project-codeflare/mcad/tree/033081131d23ba30ccf86d7cd7cc63006a51c92d) to schedule and dispatch workloads in a multi-cluster environment to minimize the carbon footprint of execution of workloads. 
+This repo will show you how to use [Caspian](https://github.com/sustainablecomputing/caspian) and [MCAD](https://github.com/project-codeflare/mcad) to schedule and dispatch workloads in a multi-cluster environment to minimize the carbon footprint of execution of workloads. 
 ## Getting Started 
 Caspian can be depolyed in Kubernetes clusters. You can use kind or k3d to get  local clusters for running Caspian. To manage containers, you can use either Docker Desktop or Rancher Desktop. The instructions below guide you to drop Caspian and its requirements on your local machine and run it for development and testing purposes using k3d clusters and Rancher Desktop.
 
@@ -16,17 +16,17 @@ The easiest way to get clp is through [Homebrew](https://brew.sh/),
 ```
 brew install clp
 ``` 
-### Clone  repositories
-Use Git CLI to clone repositories
+### Clone Caspian and MCAD repositories
+Use Git CLI to clone repositories.
 
--  Clone Caspian repository
+-  Clone Caspian repository.
 ```
 git clone git@github.com:sustainablecomputing/caspian.git
 ```
 
-- Clone multicluster branch of MCAD repository
+- Clone multicluster branch of MCAD repository.
 ```
-git clone git@github.com:tardieu/mcad.git -b multicluster
+git clone git@github.com:project-codeflare/mcad.git -b multicluster
 ```
 
 ## Steps to deploy Caspian on Mac
