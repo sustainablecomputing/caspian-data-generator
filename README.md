@@ -80,13 +80,13 @@ The default optimizer in Caspian is a multi-objective optimizer that considers c
 ./run-caspian.sh qos
 ```
 
-To visualize the output of Caspian in action, run the follwoing script
+(6) To visualize the output of Caspian in action, run the follwoing script
 ```
 ./run-visualization.sh m
 ```
 where *m* is the number of clusters.
 
-To clean up the demo, you can run the following commands.
+(7) To clean up the demo, you can run the following commands.
 
 ```
 ./cleanup.sh m
