@@ -25,7 +25,7 @@ brew install --cask rancher
 ```
 brew install k3d
 ``` 
-- [clp](https://github.com/lanl/clp), a Go-based optimization package for soliving linear programming problems,
+- [clp](https://github.com/lanl/clp) (a Go-based optimization package for soliving linear programming problems)
 ```
 brew install clp
 ``` 
