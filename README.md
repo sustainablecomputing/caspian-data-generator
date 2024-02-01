@@ -13,7 +13,7 @@ brew install go
 ```
 brew install kubernetes-cli
 ``` 
-- [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 ```
 brew install git
 ``` 
