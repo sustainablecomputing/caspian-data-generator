@@ -15,10 +15,10 @@ kube_path='~/.kube/config'
 n=1             # number of jobs
 TT = 1          # number of time slots to generate load
 period_length=60
-Overal_T=48
+
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
-# for a given job id,  if there is no job in workspace with that name, it creates greenjob object, namespace, and a deployment inside that namespace 
+# for a given job id, create an appwrapper yaml file and then apply it in the hub cluster  
 def create_job(job_id,run_time,duration,deadline,cpu,gpu):   
         
        
@@ -42,12 +42,10 @@ def create_all_jobs():
         path=os.path.expanduser('~')+"/caspian-demo/script"
         os.chdir(path)
         rate = n / T
-       # ps=poisson.rvs(rate, size=T)
         ps=numpy.random.poisson(rate, size=T)
         print(ps)
         
         
-       
         job_id=0
         for t in range(T):
             for i in range(ps[t]):
