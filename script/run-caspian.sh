@@ -8,7 +8,7 @@
 #         where <optimizationMode> could be sustainable or qos
 #         (default sustainable)
 ############################################################
-. demo-setenv.sh
+. setenv.sh
 optimizationMode="sustainable"
 if [[ $1 && $1 -gt 0 ]]
 then

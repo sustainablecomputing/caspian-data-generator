@@ -26,7 +26,7 @@ then
 fi
 
 
-. demo-setenv.sh
+. setenv.sh
 
 numClusters=1
 if [[ $1 && $1 -gt 0 ]]

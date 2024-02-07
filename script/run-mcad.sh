@@ -24,7 +24,7 @@ then
 	numClusters=$1
 fi
 
-. demo-setenv.sh
+. setenv.sh
 
 #Step(1): 
 cd $MCAD_DIR
@@ -50,7 +50,7 @@ do
     spoke_context=${CONTEXT_PREFIX}${csi}
     kubectl config use-context ${spoke_context}
     make install
-    go run ./cmd/main.go --kube-context=${spoke_context} --mode=runner --metrics-bind-address=127.0.0.1:${metrics_ports[i]} --health-probe-bind-address=127.0.0.1:${health_ports[i]} --clusterinfo-name=${csi} --geolocation=${zones[i]} --idealpower=${idealPower[i]} --peakpower=${peakPower[i]}&
+    go run ./cmd/main.go --kube-context=${spoke_context} --mode=runner --metrics-bind-address=127.0.0.1:${metrics_ports[i]} --health-probe-bind-address=127.0.0.1:${health_ports[i]} --clusterinfo-name=${csi} --geolocation=${zones[i]} --power-idle=${idealPower[i]} --power-peak=${peakPower[i]}&
     node ./syncer/syncer.js $hub_context   $spoke_context default $csi   &
 
 done 

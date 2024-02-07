@@ -16,8 +16,8 @@ then
 fi
 
 
-. demo-setenv.sh
-
+. setenv.sh
+mkdir -p $TEMP_DIR
 numClusters=1
 if [[ $1 && $1 -gt 0 ]]
 then

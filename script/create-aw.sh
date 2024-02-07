@@ -27,7 +27,7 @@ deadline=$4
 cpu_core=$5
 gpu_core=$6
 
-. demo-setenv.sh
+. setenv.sh
 
 echo "==> creating AppWrapper file ${job_name}.yaml"
 
