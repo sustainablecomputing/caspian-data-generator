@@ -31,3 +31,4 @@ export CLUSTERS_CONFIG=$HOME/.kube/config
 export CLUSTER=spoke
 export HUB=hub
 export CONTEXT_PREFIX=k3d-
+export PERIOD_LENGTH=60
