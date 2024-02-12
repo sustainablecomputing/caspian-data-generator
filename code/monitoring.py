@@ -144,7 +144,7 @@ def animate_cluster(i):
         
    
     for j in range(M):
-        utilization[j][i]=float(m.clusterInfos[0]['gpu'])/float(m.clusterInfos[0]['gpu-cap'])#test: (3-j)*0.15#
+        utilization[j][i]=float(m.clusterInfos[j]['gpu'])/float(m.clusterInfos[0]['gpu-cap'])#test: (3-j)*0.15#
         
      
     xs=range(0,T)
