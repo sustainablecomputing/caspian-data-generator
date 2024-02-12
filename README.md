@@ -37,9 +37,14 @@ Use Git CLI to clone repositories.
 git clone git@github.com:sustainablecomputing/caspian.git
 ```
 
+-  Clone Caspian-demo repository.
+```
+git clone git@github.com:sustainablecomputing/caspian-demo.git
+```
+
 - Clone multicluster branch of MCAD repository.
 ```
-git clone git@github.com:project-codeflare/mcad.git -b multicluster
+git clone git@github.com:tayebehbahreini/mcad.git -b multicluster
 ```
 
 ## Steps to deploy Caspian on Mac
