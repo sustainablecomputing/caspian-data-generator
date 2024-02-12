@@ -35,4 +35,6 @@ fi
 hub_context=${CONTEXT_PREFIX}${HUB}
 cd ~/caspian-demo
 
-/usr/bin/python3 ~/caspian-demo/code/load-generator.py $numSlots $numJobs $hub_context
+/usr/bin/python3 ~/caspian-demo/code/load-generator.py $numSlots $numJobs $hub_context $PERIOD_LENGTH &
+
+/usr/bin/python3 ~/caspian-demo/code/carbon-intensity-generator.py  $PERIOD_LENGTH&
