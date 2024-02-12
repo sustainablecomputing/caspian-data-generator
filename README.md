@@ -88,7 +88,7 @@ where *m* is the number of clusters.
 (6) Run *run-data-generator.sh* to create workloads (AppWrappers) in a timely manner (poisson distribution) and submit them in the hub cluster,
 
 ```
-./load-generator.sh T N
+./run-data-generator.sh T N
 ```
 Here, *T* is the number of time slots in whcih workloads arrive to the system and *N* is the number of workloads to be sumbitted over *T* time slots.
 
