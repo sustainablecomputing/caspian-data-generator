@@ -1,3 +1,5 @@
+import math
+import sys
 import kubernetes
 from kubernetes.config import kube_config
 import collections
@@ -9,9 +11,9 @@ import pandas as pd
 
 # Monitoring: - retrieve the specs of clusterinfo objects in the hub and plot the info
 class Monitoring(object):
-   
-    kube_config="~/.kube/config"   
     contxt="k3d-hub"
+    kube_config="~/.kube/config"   
+    
     api_client=None
     api_instance=None
     frequency=10                # frequency of updating the plot (every 10 seconds)
@@ -26,10 +28,10 @@ class Monitoring(object):
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
 # create client to talk to the hub
-    def __init__(self):         
+    def __init__(self,hub_context):         
         self.api_client=kube_config.new_client_from_config(config_file=self.kube_config,context=self.contxt)
         self.api_instance = kubernetes.client.CustomObjectsApi(self.api_client)
-
+        self.contxt=hub_context
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
 # get clusterInfo objects living in the hub and update the list of clusterInfos
@@ -93,7 +95,10 @@ class Monitoring(object):
 
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
-m=Monitoring()
+hub_context="k3d-hub"
+if len(sys.argv)>1:
+     hub_context=str(sys.argv[0])
+m=Monitoring(hub_context)
 T=m.T
 M=m.M
 
@@ -102,100 +107,111 @@ utilization= [[0 for i in range(T)] for j in range(M)]
 em_rate=[0]*T
 #slow_down: for test
 slow_down=[1,1,1,1.2,1.2,1.4,1.4,1.3,1.4,1.5,1.4,1.5,1.6,1.5,1.5,1.6,1.6,1.7,1.7,1.5,1.7,1.6,1.7,1.6,1.5,1.6,1.5,1.5,1.6,1.6,1.7,1.7,1.5,1.5,1.6,1.5]
-b_slow_down=[1,1,1,1.2,1.2,1,1.1,1.1,1.3,1.3,1.2,1.2,1.3,1.3,1.1,1.1,1.2,1.7,1.2,1.5,1.7,1.1,1.4,1.6,1.5,1.1,1.1,1.3,1.2,1.3,1.2,1.4,1.1,1.5,1.2,1.2]
+lateness=[1,1,1,1.2,1.2,1,1.1,1.1,1.3,1.3,1.2,1.2,1.3,1.3,1.1,1.1,1.2,1.7,1.2,1.5,1.7,1.1,1.4,1.6,1.5,1.1,1.1,1.3,1.2,1.3,1.2,1.4,1.1,1.5,1.2,1.2]
 
 zones=[ 'CA-ON','US-NY','GB']
 dframe=pd.read_csv('./data/CI.csv', usecols= ['timestamp', 'CA-ON','US-NY','GB'])
 carbon=[]
 carbonIntensity=[[0 for i in range(T)] for j in range(M)]
 
-aggrigaetd_em_sust=[0]*T
-aggrigaetd_em_qos=[0]*T
-b_slow_down_ratio=[0]*T
+carbon_metric=[0]*T
+lateness_ratio=[0]*T
 slow_down_ratio=[0]*T
 ax=[]
+ax2=[]
 colors=['green','red', 'brown']
-fig = plt.figure(figsize=(17,10))
-for j in range(M):
-    ax.append(fig.add_subplot(3,M,j+1))
+fig = plt.figure("Cluster Performance",figsize=(9,6))
+fig2 = plt.figure("Overall Performance",figsize=(9,3))
+
 
 for j in range(M):
- ax.append(fig.add_subplot(3,M,j+M+1))
+    ax.append(fig.add_subplot(2,M,j+1))
 
 for j in range(M):
- ax.append(fig.add_subplot(3,M,j+2*M+1))
+ ax.append(fig.add_subplot(2,M,j+M+1))
+
+for j in range(3):
+ ax2.append(fig2.add_subplot(1,3,1+j))
 
 def animate(i):
-    slow_down_ratio[i]=slow_down[int(i/m.perSlot)]
-    b_slow_down_ratio[i]=b_slow_down[int(i/m.perSlot)]
     for j in range(M):
         for t in range(i,m.perSlot*24+i):
             if t<T:
                 carbonIntensity[j][t]=dframe.iloc[int(t/m.perSlot)][zones[j]]
        
     if i>0:
-        aggrigaetd_em_sust[i]=aggrigaetd_em_sust[i-1]
-        aggrigaetd_em_qos[i]=aggrigaetd_em_qos[i-1]
-    m.get_clusterInfos()
-    aggrigaetd_load=0
-    for j in range(M):
-        utilization[j][i]=(3-j)*0.15#float(m.clusterInfos[0]['gpu'])/float(m.clusterInfos[0]['gpu-cap'])
-        aggrigaetd_load=aggrigaetd_load+utilization[j][i]
-        aggrigaetd_em_sust[i]=aggrigaetd_em_sust[i]+(utilization[j][i] *carbonIntensity[j][i])
+        carbon_metric[i]=carbon_metric[i-1]
         
-    
-    avg_carbon=0
+    m.get_clusterInfos()
     for j in range(M):
-        avg_carbon = avg_carbon+carbonIntensity[j][i]
-    
-    aggrigaetd_em_qos[i]=aggrigaetd_em_qos[i]+(aggrigaetd_load*avg_carbon/float(M))
-    
-    em_rate[i]=100*(aggrigaetd_em_qos[i]-aggrigaetd_em_sust[i])/aggrigaetd_em_qos[i]
+        utilization[j][i]=float(m.clusterInfos[0]['gpu'])/float(m.clusterInfos[0]['gpu-cap'])#test: (3-j)*0.15#
+        
     xs=range(0,int(T))
 
-    for j in range(M):
-        
+    for j in range(M):  
         ax[j].clear()
         ax[j].axis([0, T, 0, 300.1])
-        ax[j].set_xticks(ticks=range(0,int(T),int(T/m.Slots)),labels=range(0,m.Slots,1),fontsize=5) #every 6 bars add label of slot
+        ax[j].set_xticks(ticks=range(0,int(T),int(2*T/m.Slots)),labels=range(1,m.Slots+1,2),fontsize=5) #every 6 bars add label of slot
         ax[j].set_yticks(ticks=range(0,400,50),labels=range(0,400,50),fontsize=5)
-        ax[j].set_ylabel('Carbon Intensity', fontsize = 6)
-        ax[j].set_xlabel('Time slots', fontsize = 6)
+        ax[j].set_ylabel('Carbon Intensity', fontsize = 8)
+        ax[j].set_xlabel('Time slots', fontsize = 8)
         ax[j].step(xs, carbonIntensity[j],color =colors[j])
-        ax[j].set_title('Spoke '+ str(j+1), fontsize=6)
+        ax[j].set_title('Spoke '+ str(j+1), fontsize=10)
 
         ax[j+M].clear()
         ax[j+M].axis([0, T, 0, 1.1])
         ax[j+M].set_yticks(ticks=range(0,2),labels=range(0,2,1),fontsize=5)
-        ax[j+M].set_xticks(ticks=range(1,int(T),int(T/m.Slots)),labels=range(1,m.Slots+1,1),fontsize=5) #every 6 bars add label of slot 
-        ax[j+M].set_ylabel('GPU utilization', fontsize = 6)
-        ax[j+M].set_xlabel('Time slots', fontsize = 6)
+        ax[j+M].set_xticks(ticks=range(1,int(T),int(2*T/m.Slots)),labels=range(1,m.Slots+1,2),fontsize=5) #every 6 bars add label of slot 
+        ax[j+M].set_ylabel('GPU utilization', fontsize = 8)
+        ax[j+M].set_xlabel('Time slots', fontsize = 8)
         ax[j+M].bar(xs, utilization[j],color =colors[j])
-        ax[j+M].set_title('spoke '+ str(j+1), fontsize=6)
+        
 
-        ax[j+2*M].clear()
-        ax[j+2*M].set_xticks(ticks=range(0,int(T),int(T/m.Slots)),labels=range(0,m.Slots,1),fontsize=5) #every 6 bars add label of slot
-        ax[j+2*M].set_xlabel('Time slots', fontsize = 6)
+   
+ani1 = animation.FuncAnimation(fig, animate,interval=m.frequency*1000)
+
+def animate2(i):
+    slow_down_ratio[i]=slow_down[int(i/m.perSlot)]
+    lateness_ratio[i]=lateness[int(i/m.perSlot)]
+    for j in range(M):
+        for t in range(i,m.perSlot*24+i):
+            if t<T:
+                carbonIntensity[j][t]=dframe.iloc[int(t/m.perSlot)][zones[j]]
+       
+    if i>0:
+        carbon_metric[i]=carbon_metric[i-1]
+        
+    m.get_clusterInfos()
+    for j in range(M):
+        utilization[j][i]=(3-j)*0.15#float(m.clusterInfos[0]['gpu'])/float(m.clusterInfos[0]['gpu-cap'])
+        carbon_metric[i]=carbon_metric[i]+(utilization[j][i] *carbonIntensity[j][i])
+        
+    
+    xs=range(0,int(T))
+
+    for j in range(3):   
+
+        ax2[j].clear()
+        ax2[j].set_xticks(ticks=range(0,int(T),int(2*T/m.Slots)),labels=range(1,m.Slots+1,2),fontsize=5) #every 6 bars add label of slot
+        ax2[j].set_xlabel('Time slots', fontsize = 8)
         if j==0:
-            ax[j+2*M].axis([0, T, 0, 100.1])
-            ax[j+2*M].bar(xs, em_rate,color ='blue')
-            ax[j+2*M].set_yticks(ticks=range(0,100,50),labels=range(0,100,50),fontsize=5)
-            ax[j+2*M].set_ylabel('Carbon Reduction rate', fontsize = 6)
+            ax2[j].axis([0, T, 0, 10000.1])
+            ax2[j].bar(xs, carbon_metric,color ='blue')
+            ax2[j].set_yticks(ticks=range(0,10000,1000),labels=range(0,10000,1000),fontsize=5)
+            ax2[j].set_ylabel('Carbon Emission', fontsize = 8)
         if j==1:
-            ax[j+2*M].axis([0, T, 0, 3.1])
-            ax[j+2*M].bar(xs, slow_down_ratio,color ='blue')
-            ax[j+2*M].set_yticks(ticks=range(0,3,1),labels=range(0,3,1),fontsize=5)
-            ax[j+2*M].set_ylabel('Slow down', fontsize = 6)
+            ax2[j].axis([0, T, 0, 3.1])
+            ax2[j].bar(xs, slow_down_ratio,color ='blue')
+            ax2[j].set_yticks(ticks=range(0,3,1),labels=range(0,3,1),fontsize=5)
+            ax2[j].set_ylabel('Slow down', fontsize = 8)
         
         if j==2:
-            ax[j+2*M].axis([0, T, 0, 3.1])
-            ax[j+2*M].bar(xs, b_slow_down_ratio,color ='blue')
-            ax[j+2*M].set_yticks(ticks=range(0,3,1),labels=range(0,3,1),fontsize=5)
-            ax[j+2*M].set_ylabel('Bouded Slow down', fontsize = 6)
-        
+            ax2[j].axis([0, T, 0, 3.1])
+            ax2[j].bar(xs, lateness_ratio,color ='blue')
+            ax2[j].set_yticks(ticks=range(0,3,1),labels=range(0,3,1),fontsize=5)
+            ax2[j].set_ylabel('Lateness ratio', fontsize = 8)
+  
+ani2 = animation.FuncAnimation(fig2, animate2,interval=m.frequency*1000)
 
-if __name__ == '__main__':
-    
-    ani = animation.FuncAnimation(fig, animate,interval=m.frequency*1000)
-    plt.show()
+plt.show()
     

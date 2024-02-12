@@ -82,7 +82,7 @@ The default optimizer in Caspian is a multi-objective optimizer that considers c
 
 (6) To visualize the output of Caspian in action, run the follwoing script
 ```
-./run-visualization.sh m
+./run-monitoring.sh m
 ```
 where *m* is the number of clusters.
 
