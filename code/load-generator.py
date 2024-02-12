@@ -15,7 +15,7 @@ kube_path='~/.kube/config'
 n=1             # number of jobs
 TT = 1          # number of time slots to generate load
 hub_context="k3d-hub" #default hub context
-period_length=60
+period_length=20
 
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
