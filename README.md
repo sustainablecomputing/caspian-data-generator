@@ -67,14 +67,8 @@ This script creates one hub cluster and *m* spoke clusters. Here, *n* is the num
 ```
 Here, *m* is the number of spoke clusters. For more details on how to setup the charachteristics of cluters (such as their geo-location and power consumption profile), please look at the comments in the script.
 
-(4) Run *load-generator.sh* to create workloads (AppWrappers) in a timely manner (poisson distribution) and submit them in the hub cluster,
 
-```
-./load-generator.sh T N
-```
-Here, *T* is the number of time slots in whcih workloads arrive to the system and *N* is the number of workloads to be sumbitted over *T* time slots.
-
-(5) Run Caspian 
+(4) Run Caspian 
 
 ```
 ./run-caspian.sh 
@@ -85,11 +79,19 @@ The default optimizer in Caspian is a multi-objective optimizer that considers c
 ./run-caspian.sh qos
 ```
 
-(6) To visualize the output of Caspian in action, run the follwoing script
+(5) To visualize the output of Caspian in action, run the follwoing script
 ```
 ./run-monitoring.sh m
 ```
 where *m* is the number of clusters.
+
+(6) Run *run-data-generator.sh* to create workloads (AppWrappers) in a timely manner (poisson distribution) and submit them in the hub cluster,
+
+```
+./load-generator.sh T N
+```
+Here, *T* is the number of time slots in whcih workloads arrive to the system and *N* is the number of workloads to be sumbitted over *T* time slots.
+
 
 (7) To clean up the demo, you can run the following commands.
 
