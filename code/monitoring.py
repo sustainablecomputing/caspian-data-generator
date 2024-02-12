@@ -50,9 +50,9 @@ class Monitoring(object):
             for ci in clusterinfos:
                
                 if 'usage' in ci['status'] and 'nvidia.com/gpu' in ci['status']['usage']:
-                    tmp = { 'name':ci['metadata']['name'],'gpu':ci['status']['usage']['nvidia.com/gpu'],'gpu-cap':ci['status']['capacity']['nvidia.com/gpu'],'carbon': ci['spec']['carbon']}
+                    tmp = {'geolocation':ci['spec']['geolocation'],'name':ci['metadata']['name'],'gpu':ci['status']['usage']['nvidia.com/gpu'],'gpu-cap':ci['status']['capacity']['nvidia.com/gpu'],'carbon': ci['spec']['carbon']}
                 else:
-                   tmp = { 'name':ci['metadata']['name'],'gpu':'0','gpu-cap':ci['status']['capacity']['nvidia.com/gpu'],'carbon': ci['spec']['carbon']}
+                   tmp = {'geolocation':ci['spec']['geolocation'], 'name':ci['metadata']['name'],'gpu':'0','gpu-cap':ci['status']['capacity']['nvidia.com/gpu'],'carbon': ci['spec']['carbon']}
                 
                 self.clusterInfos.append(tmp)    
                 print(tmp['gpu'])                     
@@ -138,7 +138,7 @@ def animate_cluster(i):
     for j in range(M):
         for t in range(0,24):
             if i+t<T:
-                carbonIntensity[j][t+i]=int(m.clusterInfos[0]['carbon'][t])#dframe.iloc[int(t/m.perSlot)][zones[j]]
+                carbonIntensity[j][t+i]=int(m.clusterInfos[j]['carbon'][t])#dframe.iloc[int(t/m.perSlot)][zones[j]]
     if i>0:
         carbon_metric[i]=carbon_metric[i-1]
         
@@ -157,7 +157,7 @@ def animate_cluster(i):
         ax[j].set_ylabel('Carbon Intensity', fontsize = 8)
         ax[j].set_xlabel('Time slots', fontsize = 8)
         ax[j].step(xs, carbonIntensity[j],color =colors[j])
-        ax[j].set_title('Spoke '+ str(j+1), fontsize=10)
+        ax[j].set_title(m.clusterInfos[j]['geolocation'], fontsize=10)
 
         ax[j+M].clear()
         ax[j+M].axis([0, T, 0, 1.1])
