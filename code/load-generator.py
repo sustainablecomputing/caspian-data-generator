@@ -37,10 +37,11 @@ def create_all_jobs():
     numpy.random.seed(1)
     
                
-    if len(sys.argv)>3:
+    if len(sys.argv)>4:
         T=int(sys.argv[1])
         n=int(sys.argv[2])
-        hub_context=str(sys.argv[2])
+        hub_context=str(sys.argv[3])
+        period_length=int(sys.argv[4])
         subprocess.run('kubectl config use-context '+hub_context,shell=True)
        # path=os.path.expanduser('~')+"/caspian-demo/script"
        # os.chdir(path)
