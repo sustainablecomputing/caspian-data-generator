@@ -59,10 +59,10 @@ def create_all_jobs():
                 print(now)
               #  datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
                 l=period_length*(1+numpy.random.randint(0,5))
-                d = (now+ datetime.timedelta(0,2*l)).strftime('%Y-%m-%dT%H:%M:%SZ')
-                print(d)
+                d = (now+ datetime.timedelta(0,2.7*l)).strftime('%Y-%m-%dT%H:%M:%SZ')
+               
                 cpu=0#float(1+numpy.random.randint(0,2))/15
-                gpu=int(3+numpy.random.randint(0,8))
+                gpu=int(1+numpy.random.randint(0,5))
                 create_job(job_id,l,l,d,cpu,gpu)
                 job_id=job_id+1
             subprocess.run('KUBECONFIG='+kube_path+' kubectl get appwrappers',shell=True)
