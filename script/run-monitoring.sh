@@ -6,6 +6,7 @@
 ############################################################
 
 
+. setenv.sh
 
 hub_context=${CONTEXT_PREFIX}${HUB}
 cd ~/caspian-demo
