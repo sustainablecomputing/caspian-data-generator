@@ -2,7 +2,7 @@ apiVersion: workload.codeflare.dev/v1beta1
 kind: AppWrapper
 metadata:
   namespace: default
-  name: aw-xxx
+  name: job-xxx
 spec:
   priority: 1
   schedulingSpec:
@@ -27,10 +27,10 @@ spec:
         kind: Pod
         metadata:
           namespace: default
-          name: aw-xxx-1
+          name: job-xxx-1
           labels:
             workload.codeflare.dev/namespace: default
-            workload.codeflare.dev: aw-xxx
+            workload.codeflare.dev: job-xxx
         spec:
           restartPolicy: Never
           containers:
