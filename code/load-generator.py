@@ -25,10 +25,10 @@ def create_job(job_id,run_time,duration,deadline,cpu,gpu):
        
         path=os.path.expanduser('~')+"/caspian-demo"
         os.chdir(path+"/script")
-        os.system('./create-aw.sh aw'+str(job_id)+"\t"+str(run_time)+"\t"+str(duration)+"\t"+str(deadline)+"\t"+str(cpu)+"\t"+str(gpu))
+        os.system('./create-aw.sh job'+str(job_id)+"\t"+str(run_time)+"\t"+str(duration)+"\t"+str(deadline)+"\t"+str(cpu)+"\t"+str(gpu))
         subprocess.run('kubectl config use-context k3d-hub ',shell=True)
     
-        subprocess.run(' kubectl apply -f'+path+'/temp/aw'+str(job_id)+'.yaml',shell=True)
+        subprocess.run(' kubectl apply -f'+path+'/temp/job'+str(job_id)+'.yaml',shell=True)
         
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
@@ -58,8 +58,8 @@ def create_all_jobs():
                 now=datetime.datetime.utcnow()
                 print(now)
               #  datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-                l=period_length*(1+numpy.random.randint(0,5))
-                d = (now+ datetime.timedelta(0,2.7*l)).strftime('%Y-%m-%dT%H:%M:%SZ')
+                l=period_length*(1+numpy.random.randint(0,4))
+                d = (now+ datetime.timedelta(0,3*l)).strftime('%Y-%m-%dT%H:%M:%SZ')
                
                 cpu=0#float(1+numpy.random.randint(0,2))/15
                 gpu=int(1+numpy.random.randint(0,5))
