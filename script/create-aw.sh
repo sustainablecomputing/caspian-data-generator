@@ -33,7 +33,7 @@ echo "==> creating AppWrapper file ${job_name}.yaml"
 
 
 
-sed 's/aw-xxx/'"$job_name"'/' ${YAML_DIR}/aw-template.yaml | \
+sed 's/job-xxx/'"$job_name"'/' ${YAML_DIR}/aw-template.yaml | \
 sed 's/rrr/'"$run_time"'/' | \
 sed 's/ttt/'"$duration"'/' | \
 sed 's/ddd/'"$deadline"'/' | \
