@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.ticker import PercentFormatter
 
-
+total_jobs=173
 # Monitoring: - retrieve the specs of clusterinfo objects in the hub and plot the info
 class Monitoring(object):
     contxt="k3d-hub"
@@ -125,7 +125,7 @@ class Monitoring(object):
             if num_succeed>0:
                 m.slow_down_metric=avg_slowdown/(num_succeed)
                 m.lateness_metric=100*num_late/num_succeed#avg_lateness/num_succeed
-                
+                print("ppp", sum(self.ratio_val)/num_succeed)
             #print('kk',num_succeed,avg_slowdown/(num_succeed),avg_lateness/num_succeed)
 		                                   
         except ApiException as e:
@@ -209,7 +209,7 @@ def animate_cluster(i):
         ax[jj+M].set_ylabel('GPU Allocation (%)', fontsize = 8,labelpad=.4)
         ax[jj+M].set_xlabel('Time Slots', fontsize = 8)
         ax[jj+M].bar(xs, utilization[j],color  =colors_geos.get(geos[j]))
-        
+        ax[1].get_figure().savefig('./fig/clusters'+str(i)+'.pdf')
 
 ani1 = animation.FuncAnimation(fig, animate_cluster,interval=m.frequency*1000)       
 
@@ -242,12 +242,12 @@ def animate2(i):
         ax2[1].set_ylabel('Percentage of Jobs', fontsize = 8)
        # my_hist, bin_edges = np.histogram(m.ratio_val, bins=m.num_bin,weights=np.ones(len(m.ratio_val)) / len(m.ratio_val))
         #my_hist=m.num_per_bin/(sum(m.num_per_bin))
-        my_hist = [x /sum(m.num_per_bin) for x in m.num_per_bin]
+        my_hist = [x /(total_jobs) for x in m.num_per_bin]
         bin_edges=[0]*(m.num_bin+1)
         for i in range(m.num_bin+1):
             bin_edges[i]=i*(m.max_val-m.min_val)/m.num_bin
 
-        print(bin_edges)
+      
         labels= ["On Time ($\\alpha ≤1$)","Late ($1<\\alpha ≤1.2$)", "Very Late ($\\alpha >1.2$)"]
         cmap = plt.get_cmap('RdYlBu_r')
         low = cmap(0.5)
@@ -288,17 +288,20 @@ def animate2(i):
     ) 
         
         plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-        ax2[1].axis([0, m.max_val, 0, 1.1])
+        ax2[1].axis([0, m.max_val, 0, .31])
         ax2[1].set_xlabel('$\\alpha$ :Job Completion Time Ratio', fontsize = 8)
         ax2[1].tick_params(axis='x', labelsize=6)
         ax2[1].tick_params(axis='y', labelsize=6)
-        ax2[1].set_yticks(np.arange(0, 1.1, .1))
+        ax2[1].set_yticks(np.arange(0, .31, .1))
 
         handles = [Rectangle((0,0),1,1,color=c,ec="k") for c in [low,medium, high]]
 
         plt.legend(handles, labels, fontsize = 7)
+        
+        ax2[1].get_figure().savefig('./fig/overall'+str(i)+'.pdf')
        # ax2[1].set_xticks(bb[0:10],labels=bb[0:m.num_bin])
 ani2 = animation.FuncAnimation(fig2, animate2,interval=m.frequency*1000)
 
 plt.show()
+
     
