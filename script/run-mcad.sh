@@ -37,7 +37,6 @@ go run ./cmd/main.go --kube-context=$hub_context --mode=dispatcher --metrics-bin
 
 #MCAD Runner gets as input the geo-location and power profile of the clusters and update 
 # the clusterinfo accordingly. A sample input values for 10 clusters are provided below.
-
 #Step (3)-(5)
 for i in $(seq ${numClusters});
 do
